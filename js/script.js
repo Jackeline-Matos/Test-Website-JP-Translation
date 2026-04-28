@@ -16,12 +16,12 @@ function loadComponent(id, url, callback) {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Standard-Komponenten laden
-    loadComponent("header-placeholder", "/components/header.html");
-    loadComponent("footer-placeholder", "/components/footer.html");
-    loadComponent("calltoaction-placeholder", "/components/call-to-action.html");
+    loadComponent("header-placeholder", "components/header.html");
+    loadComponent("footer-placeholder", "components/footer.html");
+    loadComponent("calltoaction-placeholder", "components/call-to-action.html");
 
     // Datenschutz laden UND prüfen, ob es geöffnet werden soll
-    loadComponent("datenschutz-placeholder", "/components/datenschutz.html", () => {
+    loadComponent("datenschutz-placeholder", "components/datenschutz.html", () => {
         /* LOGIK FÜR DEN ERSTEN BESUCH (Sitzungsprüfung) */
         if (!sessionStorage.getItem('modalSeen')) {
             openDatenschutz(); // Diese Funktion muss in deinem Skript definiert sein
@@ -259,3 +259,4 @@ if (btn && hiddenCards.length > 0) {
         }
     });
 }
+
