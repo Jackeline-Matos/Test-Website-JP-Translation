@@ -1,0 +1,128 @@
+/* Hauptabschnitt Kontakt */
+.main-contact {
+  margin: 4rem 6.25rem; /* 100px */
+}
+
+/* Einleitungstext für Kontakt */
+.contact-intro {
+
+  text-align: center;
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+.contact-intro h1 {
+  font-size: 2.5rem;
+  color: #333;
+
+}
+
+/* Anpassungen am Kontaktformular */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 0.9375rem; /* 15px */
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Fokus-Zustand für Formularfelder */
+.contact-form input:focus, 
+.contact-form select:focus, 
+.contact-form textarea:focus {
+  border-color: #fdc509 !important;
+  outline: none;
+}
+
+/* Kontakt-Button Styling */
+.btn-contact {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.9375rem 1.875rem; /* 15px 30px */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Bereich für Kontaktinformationen unter dem Formular */
+.kontact-info {
+  max-width: 28.125rem; /* 450px */
+  margin-top: 3rem;
+  padding: 1.875rem; /* 30px */
+  background: #fff;
+  border-left: 0.5rem solid #fdc509; /* 8px */
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.32);
+  border-radius: 0.50rem; /* 4px */
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.kontact-info h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.4rem;
+  border-bottom: 0.0625rem solid #eee;
+  padding-bottom: 0.625rem; /* 10px */
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.kontact-info p {
+  margin: 0.625rem 0;
+  font-size: 1rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+}
+
+/* Hervorhebung von Labels (E-Mail, Telefon) */
+.kontact-info strong {
+  color: #333;
+  min-width: 5rem; /* 80px */
+  display: inline-block;
+}
+
+/* ============================================================
+   HANDY-ANPASSUNGEN 
+   SERVICE
+   ============================================================ */
+
+   @media (max-width: 768px) {
+    .main-contact {
+      margin: 2rem 1.25rem; /* 32px */
+    }
+
+    .contact-intro h1 {
+      font-size: 1.8rem;
+    }
+
+    .btn-contact {
+      width: 50%;
+    }
+
+    .kontact-info {
+      max-width: 100%;
+      padding: 1.25rem; /* 20px */
+    }
+
+   }

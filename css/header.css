@@ -1,0 +1,211 @@
+/* Hauptcontainer: Definiert Höhe und Farbe */
+.main-header {
+    max-width: 100%;
+    height: 5.625rem; /* 90px */
+    background: #fdc509;
+    box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.1);
+
+}
+
+/* Inhaltscontainer: Hält Logo und Nav an den Rändern */
+.header-container {
+  
+  margin: 0 auto;
+  padding: 0 3.125rem; /* 50px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo-Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#nav-logo {
+  height: 6.25rem; /* 100px - conforme sua última definição */
+  width: auto;
+  display: block;
+}
+
+#nav-img-indojobs {
+  width: 100%;
+  height: 5rem; /* 80px */
+}
+
+/* Navigationsmenü */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem; /* 25px */
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9375rem; /* 15px */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Unterstreichungseffekt (Underline) */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem; /* 2px */
+  bottom: -0.3125rem; /* -5px */
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Aktiver Zustand für die jeweilige Seite */
+#home-page .link-home::after,
+#service-page .link-service::after,
+#contact-page .link-contact::after, 
+#sprachkurs-page .link-sprachkurs::after,
+#about-page .link-about::after {
+  width: 100%;
+  display: block;
+}
+
+/* Textfarbe für den aktiven Zustand */
+#home-page .link-home,
+#service-page .link-service,
+#sprachkurs-page .link-sprachkurs,
+#about-page .link-about,
+#contact-page .link-contact {
+  color: #000;
+}
+
+/* Highlight-Button (letzter Link im Menü) */
+.nav-menu a:last-child {
+  color: #fdc509;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border-radius: 0.3125rem; /* 5px */
+}
+
+.nav-menu a:last-child::after {
+  display: none;
+}
+
+/* Interaktives Indo-Jobs Element */
+#indo-jobs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+  color: #333;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+#indo-jobs:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.menu-toggle {
+        display: none;
+    }
+/* ============================================================
+   HANDY-ANPASSUNGEN (Max-Width: 768px)
+   Header & Navigation
+   ============================================================ */
+@media (max-width: 768px) {
+
+    .main-header {
+        height: 5.625rem; /* Mantém a altura fixa do header no mobile */
+        display: flex;
+        align-items: center;
+    }
+
+    .header-container {
+        width: 100%;
+        flex-direction: row; /* Mantém Logo e Burger na mesma linha */
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+
+    #nav-logo {
+        height: 5rem; /* Logo um pouco menor no mobile */
+        
+    }
+
+    /* --- ESTADO INICIAL DO MENU (OCULTO) --- */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 5.625rem; 
+        left: 0;
+        width: 100%;
+        background-color: #fdc509;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        margin: 0;
+    }
+
+    /* --- ESTADO ATIVO (QUANDO CLICA) --- */
+    .nav-menu.active {
+        display: flex !important; /* Força a exibição */
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        display: block;
+       
+    }
+
+    /* Esconde o efeito de linha para não poluir o mobile */
+    .nav-menu a::after {
+        display: none !important;
+    }
+
+    /* --- BOTÃO BURGER --- */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animação do X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}

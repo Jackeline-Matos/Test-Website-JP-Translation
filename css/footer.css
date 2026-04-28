@@ -1,0 +1,86 @@
+/* Haupt-Footer: Hintergrund und Abstände */
+.main-footer {
+  width: 100%;
+  display: block;
+  clear: both;
+  background-color: rgb(253, 197, 9);
+  /* 40px / 16px = 2.5rem */
+  padding: 2.5rem 0;
+}
+
+/* Footer-Container: Layout-Ausrichtung */
+.main-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3.125rem;
+  box-sizing: border-box;
+}
+
+/* Footer-Logo Styling */
+.footer-logo img {
+  /* Mantido em 12rem conforme sua definição */
+  width: 12rem;
+  /* 10px / 16px = 0.625rem */
+  margin-bottom: 0.625rem;
+}
+
+/* Text-Styling im Footer-Logo Bereich */
+.footer-logo p {
+  font-size: 0.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 40px; /* Espaço entre as colunas de links */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  opacity: 0.7; /* Um efeito simples de hover */
+}
+
+#footer-placeholder {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+/* ============================================================
+   HANDY-ANPASSUNGEN 
+   SERVICE
+   ============================================================ */
+
+   @media (max-width: 768px) {
+    .main-footer .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.25rem; /* Reduzido para 20px */
+    }
+
+    .footer-nav {
+      flex-direction: column;
+      gap: 20px; /* Reduzido para 20px */
+      margin-top: 1.25rem; /* Adicionado espaçamento entre logo e links */
+    }
+
+   }

@@ -1,0 +1,59 @@
+/* Bild-Styling mit klassischem Schatten */
+.group-photo img {
+  border-radius: 1.25rem; /* 20px */
+  box-shadow: 0.625rem 0.625rem 0 #000;
+  max-width: 100%;
+}
+
+/* Kurs-Abschnitt Layout */
+.course-section {
+  padding: 3.125rem 6.25rem; /* 50px 100px */
+}
+
+/* Alternativer Hintergrund zur Trennung */
+.alt-bg {
+  background-color: #f9f9f9;
+}
+
+/* Flexbox-Container für Inhalte */
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 3.125rem; /* 50px */
+}
+
+/* Umgekehrte Richtung für Flexbox */
+.flex-container.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Titel-Styling innerhalb der Kurs-Texte */
+.course-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem; /* 20px */
+  border-bottom: 0.1875rem solid #FFD700; /* 3px */
+  display: inline-block;
+}
+
+/* Outline-Button-Styling */
+.btn-outline {
+  background: transparent;
+  border: 0.125rem solid #fdd509; /* 2px */
+  border-radius: 0.3125rem; /* 5px */
+  padding: 0.625rem 1.5625rem; /* 10px 25px */
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #fdd509;
+  color: #333;
+}
+
+/* Schwebender Schmetterling Effekt */
+.floating-butterfly {
+  width: 6.25rem; /* 100px */
+  opacity: 0.2;
+}
+

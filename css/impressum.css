@@ -1,0 +1,66 @@
+/* --- IMPRESSUM SEITE STYLING --- */
+
+/* Hauptsektion für das Impressum */
+.impressum-section {
+    padding: 5rem 0; /* 80px */
+    background-color: #ffffff;
+    min-height: 60vh;
+}
+
+/* Container-Ausrichtung (identisch mit Header/Footer) */
+.impressum-section .container {
+    max-width: 75rem; /* 1200px */
+
+    padding: 0 3.125rem; /* 50px */
+    box-sizing: border-box;
+    display: block; /* Aqui não usamos flex para o texto não ficar lado a lado */
+}
+
+.impressum-text h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 3.125rem;
+    border-bottom: 0.25rem solid #fdd509; /* Linha amarela característica */
+    display: inline-block;
+}
+
+/* Blöcke für die rechtlichen Informationen */
+.impressum-block {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.impressum-block h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.625rem;
+    font-weight: 600;
+}
+
+.impressum-block p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.3125rem 0;
+}
+
+.impressum-block a {
+    color: #fdc509;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.impressum-block a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Responsividade simples */
+@media (max-width: 48rem) {
+    .impressum-section .container {
+        padding: 0 1.25rem;
+    }
+    
+    .impressum-text h1 {
+        font-size: 2rem;
+    }
+}

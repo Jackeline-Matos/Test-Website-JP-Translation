@@ -1,0 +1,52 @@
+
+.quick-contact {
+    width: 100%;
+    padding: 3.75rem 0; /* 60px */
+    background-color: #fdfdfd;
+    border-bottom: 0.1875rem solid #f0f0f0;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.166);
+}
+.contact-container {
+
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha tudo perfeitamente ao centro verticalmente */
+  gap: 40px; /* Garante que o texto e os botões não batam um no outro */
+}
+
+/* Melhorando o bloco de texto */
+.contact-text {
+  flex: 1; /* Faz o texto ocupar o espaço disponível na esquerda */
+}
+
+.contact-text h2 {
+  font-size: 1.8rem; /* Reduzimos o tamanho para não "gritar" tanto */
+  color: #222;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.contact-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 500px; /* Evita que o texto estique muito para a direita */
+}
+
+/* Harmonizando o bloco de ações (botões) */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço elegante entre o botão de email e os sociais */
+}
+
+.social-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.contact-container {
+  align-items: center; /* Garante alinhamento vertical entre texto e botões */
+}
+
