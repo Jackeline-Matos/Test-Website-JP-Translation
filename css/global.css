@@ -491,3 +491,68 @@ border-radius: 0.5rem; /* 10px */
 }
 
 
+/* //thankyou */
+/* Media Query para Tablets e Smartphones */
+@media (max-width: 768px) {
+  
+  .thank-you-page {
+    padding: 2rem 1rem;
+    min-height: auto; /* Evita que o card fique muito esticado em telas pequenas */
+  }
+
+  .thank-you-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.8rem;
+  }
+
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .thank-you-card h1 {
+    font-size: 2rem; /* Redução do título principal */
+    margin-bottom: 1rem;
+  }
+
+  .thank-you-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .thank-you-card > p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .thank-you-line {
+    margin: 1.8rem auto;
+  }
+
+  .thank-you-info {
+    flex-direction: column; /* Ícone e texto ficam um em cima do outro */
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .thank-you-info p {
+    text-align: center; /* Alinha o texto centralizado no mobile */
+  }
+
+  .thank-you-buttons {
+    flex-direction: column; /* Botões empilhados */
+    width: 100%;
+  }
+
+  .btn-yellow,
+  .btn-outline {
+    width: 100%; /* Botões ocupam a largura total disponível */
+    min-width: unset;
+    padding: 0.8rem 1rem;
+    display: block;
+     text-align: center;
+     padding: 1rem 0.5rem;
+  }
+}

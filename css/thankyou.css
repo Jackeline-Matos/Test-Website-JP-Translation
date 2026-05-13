@@ -120,33 +120,3 @@
   background: #f7b500;
 }
 
-@media (max-width: 768px) {
-  .thank-you-card {
-    padding: 3rem 1.5rem;
-  }
-
-  .thank-you-card h1 {
-    font-size: 2.3rem;
-  }
-
-  .thank-you-card h2 {
-    font-size: 1.2rem;
-  }
-
-  .thank-you-info {
-    flex-direction: column;
-  }
-
-  .thank-you-info p {
-    text-align: center;
-  }
-
-  .thank-you-buttons {
-    flex-direction: column;
-  }
-
-  .btn-yellow,
-  .btn-outline {
-    width: 100%;
-  }
-}
