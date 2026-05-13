@@ -427,12 +427,6 @@ border-radius: 0.5rem; /* 10px */
         gap: 2rem;
     }
 
-    /* 2. Botão de fechar: maior para facilitar o toque */
-  .close-button {
-        top: 0.6rem;
-        right: 0.6rem;
-        font-size: 2.5rem; /* Facilita fechar no celular */
-    }
 
     /* 3. Cards de Serviço: garantir que ocupem a largura certa */
   .card-service {
@@ -442,8 +436,8 @@ border-radius: 0.5rem; /* 10px */
 
     /* 4. A div/ícone dentro do card: mais visível */
      .card-service div {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
         bottom: 0.625rem;
         right: 0.625rem;
         display: flex;
@@ -464,6 +458,11 @@ border-radius: 0.5rem; /* 10px */
         max-height: 60vh;
         margin: 5rem auto;
        
+    }
+
+    .card-service img {
+      
+      margin-right: 2rem;
     }
 
 
