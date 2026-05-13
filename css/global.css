@@ -5,6 +5,7 @@
 @import url(../css/calltoaction.css);
 @import url(../css/contact.css);
 @import url(/css/impressum.css);
+@import url(/css/about.css);
 
 /* Allgemeine Einstellungen */
 body {
@@ -143,6 +144,7 @@ border-radius: 0.5rem; /* 10px */
   border-radius: 1.25rem; /* 20px */
   object-fit: cover;
 }
+
 
 #card-relocation {
   /* No Flexbox ou Grid, o order: 999 joga o item para o fim de tudo */

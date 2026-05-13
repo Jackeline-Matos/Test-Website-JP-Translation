@@ -167,34 +167,6 @@ window.onclick = function(event) {
     }
 };
 
-/* MEDIA QUERIES INDEX */
-/*
-const btn = document.getElementById('loadMoreBtn');
-const hiddenCards = document.querySelectorAll('.hidden-mobile');
-
-btn.addEventListener('click', function() {
-    // Prüfen, ob die erste versteckte Karte die Klasse 'show-cards' hat
-    const isExpanded = hiddenCards[0].classList.contains('show-cards');
-
-    if (!isExpanded) {
-        // --- ÖFFNEN (Mehr anzeigen) ---
-        hiddenCards.forEach(card => {
-            card.classList.add('show-cards');
-        });
-        btn.textContent = 'Weniger anzeigen'; // Text zu "Weniger" ändern
-    } else {
-        // --- SCHLIESSEN (Weniger anzeigen) ---
-        hiddenCards.forEach(card => {
-            card.classList.remove('show-cards');
-        });
-        btn.textContent = 'Mehr anzeigen'; // Text zurück zu "Mehr" ändern
-        
-        // Optional: Scrollt den Nutzer sanft zurück zum Anfang der Sektion
-        btn.scrollIntoView({ behavior: 'smooth' });
-    }
-});
-
-
 /* MEDIA QUERIES HEADER */
 
 
