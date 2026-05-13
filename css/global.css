@@ -154,6 +154,7 @@ border-radius: 0.5rem; /* 10px */
 /* Karten-Container und Track */
 .card-container {
   overflow: hidden;
+  
  
 }
 
@@ -167,7 +168,7 @@ border-radius: 0.5rem; /* 10px */
 .card-track {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   width: 100%;
   gap: 2.5rem; /* 40px */
@@ -175,6 +176,7 @@ border-radius: 0.5rem; /* 10px */
 
 /* Styling der Infokarten */
 .card {
+  
   flex: 0 1 15.625rem; /* 250px */
   background: rgba(255, 255, 255, 0.9);
   max-width: 100%;
