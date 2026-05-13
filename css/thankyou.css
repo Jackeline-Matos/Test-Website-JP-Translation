@@ -1,0 +1,152 @@
+.thank-you-page {
+  min-height: calc(100vh - 220px);
+  padding: 5rem 1.5rem;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-card {
+  width: 100%;
+  max-width: 850px;
+  background: #fff;
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.success-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 2rem;
+  border: 5px solid #f7b500;
+  border-radius: 50%;
+  color: #f7b500;
+  font-size: 3.5rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-card h1 {
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 1.3rem;
+}
+
+.thank-you-card h2 {
+  font-size: 1.45rem;
+  color: #f7b500;
+  margin-bottom: 1.8rem;
+}
+
+.thank-you-card > p {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #222;
+}
+
+.thank-you-line {
+  width: 380px;
+  max-width: 80%;
+  height: 2px;
+  background: #f7b500;
+  margin: 2.5rem auto;
+}
+
+.thank-you-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+.mail-icon {
+  font-size: 2rem;
+  color: #f7b500;
+}
+
+.thank-you-info p {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.thank-you-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-yellow,
+.btn-outline {
+  min-width: 180px;
+  padding: 0.95rem 1.5rem;
+  border-radius: 0.45rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-yellow {
+  background: #f7b500;
+  color: #111;
+  border: 2px solid #f7b500;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #111;
+  border: 2px solid #f7b500;
+}
+
+.btn-yellow:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.btn-outline:hover {
+  background: #f7b500;
+}
+
+@media (max-width: 768px) {
+  .thank-you-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .thank-you-card h1 {
+    font-size: 2.3rem;
+  }
+
+  .thank-you-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .thank-you-info {
+    flex-direction: column;
+  }
+
+  .thank-you-info p {
+    text-align: center;
+  }
+
+  .thank-you-buttons {
+    flex-direction: column;
+  }
+
+  .btn-yellow,
+  .btn-outline {
+    width: 100%;
+  }
+}
