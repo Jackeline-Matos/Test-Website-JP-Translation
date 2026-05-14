@@ -122,7 +122,7 @@ border-radius: 0.5rem; /* 10px */
 }
 
 .infos p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #444;
 }
 
@@ -550,11 +550,59 @@ border-radius: 0.5rem; /* 10px */
 
   .btn-yellow,
   .btn-outline {
-    width: 100%; /* Botões ocupam a largura total disponível */
+    width: 100%; 
     min-width: unset;
     padding: 0.8rem 1rem;
     display: block;
      text-align: center;
      padding: 1rem 0.5rem;
+  }
+}
+
+/*
+============================================================
+   HANDY-ANPASSUNGEN 
+   SERVICE
+   ============================================================ */
+
+   @media (max-width: 1024px) {
+      .btn-contact {
+      width: 50%;
+    }
+
+   }
+
+   @media (max-width: 768px) {
+    .main-contact {
+      margin: 2rem 1.25rem; /* 32px */
+    }
+
+    .contact-intro h1 {
+      font-size: 1.8rem;
+    }
+
+    .btn-contact {
+      width: 50%;
+    }
+
+    .kontact-info {
+      max-width: 100%;
+      padding: 1.25rem; /* 20px */
+    }
+
+   }
+/* MEDIA QUERIES - CONTACT SOCIAL-MEDIA-BUTTONS */
+/* Para telas com menos de 768px (Tablets e Celulares) */
+@media (max-width: 768px) {
+  .social-wrapper-contact {
+    margin-left: 15rem; 
+    display: flex;
+    justify-content: center; 
+    gap: 1rem; /
+  }
+
+  .social-wrapper-contact img {
+    width: 2.5rem; 
+    height: 2.5rem;
   }
 }

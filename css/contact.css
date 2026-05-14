@@ -102,27 +102,14 @@
   display: inline-block;
 }
 
-/* ============================================================
-   HANDY-ANPASSUNGEN 
-   SERVICE
-   ============================================================ */
+.social-wrapper-contact {
+  
+  margin-left: 20rem;
+}
 
-   @media (max-width: 768px) {
-    .main-contact {
-      margin: 2rem 1.25rem; /* 32px */
-    }
+.social-wrapper-contact img{
+  width: 3.5rem;
+  height: 3.5rem;
 
-    .contact-intro h1 {
-      font-size: 1.8rem;
-    }
-
-    .btn-contact {
-      width: 50%;
-    }
-
-    .kontact-info {
-      max-width: 100%;
-      padding: 1.25rem; /* 20px */
-    }
-
-   }
+}
+/* 
