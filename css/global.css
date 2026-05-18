@@ -618,15 +618,14 @@ border-radius: 0.5rem; /* 10px */
   }
 
   .about-image {
-    width: 50%;
-    max-width: 500px;
+ 
     margin-bottom: 2rem;
     margin-right:0;
   }
 
     .about-image img {
-      margin: 0;
-      width: 50%;
+        width: 80%;
+        height: 80%;
   }
 
   .infos-about {
