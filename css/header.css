@@ -166,7 +166,7 @@
     .nav-menu a {
         font-size: 1.2rem;
         display: block;
-       
+        padding: 0.75rem 1.5rem;
     }
 
     /* Esconde o efeito de linha para não poluir o mobile */
@@ -179,12 +179,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
+        width: 44px;
+        height: 44px;
+        padding: 11px 7px;
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 0;
         z-index: 1001;
     }
 

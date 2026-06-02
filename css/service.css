@@ -49,3 +49,9 @@
   cursor: pointer;
 }
 
+
+button.card-service {
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}

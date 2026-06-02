@@ -15,7 +15,6 @@
 
   <link rel="canonical" href="https://seusite.com">
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/foto/Butterfly.svg">
 
 </head>
 <body id="service-page">
@@ -38,15 +37,15 @@
     </section>
   </div>
 
-  <div id="modal-servicos" class="modal">
-    <div class="modal-content card-grande"> <span class="close-button" onclick="fecharModal()">&times;</span>
+  <div id="modal-servicos" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal-content card-grande"> <button type="button" class="close-button" onclick="fecharModal()" aria-label="Dialog schließen">&times;</button>
       <h3 id="modal-titulo"></h3>
       <div id="modal-texto"></div>
     </div>
   </div>
 
   <div class="modal-service-container">
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Company Development & Technical Services', 
       '<ul>' +
         '<li>Beeidigte Übersetzungen nach DIN-Norm</li>' +
@@ -65,9 +64,9 @@
       
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Training - Coaching - Consulting', 
       '<ul>' +
         '<li>Interkulturelle Trainings</li>' +
@@ -90,9 +89,9 @@
       
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Übersetzen - Dolmetschen - Dokumentation', 
       '<ul>' +
         '<li>English</li><li>Italienisch</li><li>Französisch</li><li>Spanisch</li>' +
@@ -106,9 +105,9 @@
       Übersetzen | Dolmetschen | Dokumentation
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Unsere Arbeitsweise & Philosophie', 
       '<ul>' +
         '<li>Flexibel</li>' +
@@ -123,7 +122,7 @@
       Unsere Arbeitsweise & Philosophie
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
   </div>
   <div id="calltoaction-placeholder"></div>
   <div id="footer-placeholder"></div>
