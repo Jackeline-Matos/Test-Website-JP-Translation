@@ -1,34 +1,46 @@
-/* --- KOMPONENTEN-LADER MIT AUTOMATISIERUNG --- */
+/* --- KOMPONENTEN-LADER --- */
 
-function loadComponent(id, url, callback) {
+function loadComponent(id, url) {
+    const placeholder = document.getElementById(id);
+    if (!placeholder) return;
+
     fetch(url)
         .then(response => {
             if (!response.ok) throw new Error("Fehler beim Laden: " + url);
             return response.text();
         })
         .then(data => {
-            document.getElementById(id).innerHTML = data;
-            // Wenn ein Callback existiert (z.B. die Modal-Prüfung), führe ihn jetzt aus
-            if (callback) callback();
+            placeholder.innerHTML = data;
         })
         .catch(error => console.error("Fehler beim Laden:", error));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Standard-Komponenten laden
     loadComponent("header-placeholder", "components/header.html");
     loadComponent("footer-placeholder", "components/footer.html");
     loadComponent("calltoaction-placeholder", "components/call-to-action.html");
-
-    // Datenschutz laden UND prüfen, ob es geöffnet werden soll
-    loadComponent("datenschutz-placeholder", "components/datenschutz.html", () => {
-        /* LOGIK FÜR DEN ERSTEN BESUCH (Sitzungsprüfung) */
-        if (!sessionStorage.getItem('modalSeen')) {
-            openDatenschutz(); // Diese Funktion muss in deinem Skript definiert sein
-            sessionStorage.setItem('modalSeen', 'true');
-        }
-    });
+    loadComponent("datenschutz-placeholder", "components/datenschutz.html");
 });
+
+let lastFocusedElement = null;
+
+function showDialog(modal) {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.hidden = false;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+    const focusTarget = modal.querySelector(".close-button, button, a, input, select, textarea");
+    if (focusTarget) focusTarget.focus();
+}
+
+function hideDialog(modal) {
+    if (!modal) return;
+    modal.hidden = true;
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+    if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
+}
 
 // Seleciona o container pai e o card pelo ID único
 const container = document.querySelector('.cards-grid'); // coloque a classe do seu container aqui
@@ -41,21 +53,14 @@ if (container && relocationCard) {
 /* Service - Dienstleistung */
 
 function abrirModal(titulo, texto) {
+  const modal = document.getElementById('modal-servicos');
   document.getElementById('modal-titulo').innerText = titulo;
   document.getElementById('modal-texto').innerHTML = texto;
-  document.getElementById('modal-servicos').style.display = "block";
+  showDialog(modal);
 }
 
 function fecharModal() {
-  document.getElementById('modal-servicos').style.display = "none";
-}
-
-// Fechar se clicar fora da caixa branca
-window.onclick = function(event) {
-  let modal = document.getElementById('modal-servicos');
-  if (event.target == modal) {
-    fecharModal();
-  }
+  hideDialog(document.getElementById('modal-servicos'));
 }
 
 /* Sprachkurs */
@@ -94,7 +99,7 @@ const cursoBusinessEnglish = {
     const modal = document.getElementById('modal-servicos');
     document.getElementById('modal-titulo').innerText = cursoBusinessEnglish.titulo;
     document.getElementById('modal-texto').innerHTML = cursoBusinessEnglish.conteudo;
-    modal.style.display = 'block';
+    showDialog(modal);
 } 
 
 
@@ -135,81 +140,77 @@ const cursoSecurityEnglish = {
     const modal = document.getElementById('modal-servicos');
     document.getElementById('modal-titulo').innerText = cursoSecurityEnglish.titulo;
     document.getElementById('modal-texto').innerHTML = cursoSecurityEnglish.conteudo;
-    modal.style.display = 'block';
+    showDialog(modal);
 } 
 
 
 /* Skripte für das Datenschutz-Modal */
-
-// Funktion zum Öffnen des Modals
 function openDatenschutz() {
-    const modal = document.getElementById("datenschutzModal");
-    if (modal) {
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // Deaktiviert Scrollen im Hintergrund
-    }
+    showDialog(document.getElementById("datenschutzModal"));
 }
 
-// Funktion zum Schließen des Modals
 function closeDatenschutz() {
-    const modal = document.getElementById("datenschutzModal");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Aktiviert Scrollen wieder
-    }
+    hideDialog(document.getElementById("datenschutzModal"));
 }
 
-// Schließen, wenn der Benutzer außerhalb des Modals klickt
-window.onclick = function(event) {
-    const modal = document.getElementById("datenschutzModal");
-    if (event.target == modal) {
-        closeDatenschutz();
+document.addEventListener("click", event => {
+    const overlay = event.target.closest(".modal");
+    if (overlay && event.target === overlay) {
+        overlay.id === "datenschutzModal" ? closeDatenschutz() : fecharModal();
     }
-};
 
-/* MEDIA QUERIES HEADER */
-
-
- document.addEventListener('click', (event) => {
-    // Busca o botão de toggle (ou seus filhos, como as spans)
-
-  
-    const toggleBtn = event.target.closest('#menu-toggle');
-    const nav = document.getElementById('nav-menu');
-
+    const toggleBtn = event.target.closest("#menu-toggle");
+    const nav = document.getElementById("nav-menu");
     if (toggleBtn && nav) {
-        // Removemos ouvintes antigos para não acumular (evita cliques duplos)
-        toggleBtn.replaceWith(toggleBtn.cloneNode(true));
-        
-   
-        
-        toggleBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            toggleBtn.classList.toggle('active');
-            console.log("Menu inicializado/reiniciado!");
-        });
-
-        // Fechar ao clicar nos links
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                toggleBtn.classList.remove('active');
-            });
-        });
+        const isOpen = nav.classList.toggle("active");
+        toggleBtn.classList.toggle("active", isOpen);
+        toggleBtn.setAttribute("aria-expanded", String(isOpen));
+        toggleBtn.setAttribute("aria-label", isOpen ? "Navigationsmenü schließen" : "Navigationsmenü öffnen");
+        return;
     }
 
-    // Se clicou no botão de abrir/fechar
-    if (toggleBtn) {
-        if (nav) {
-            nav.classList.toggle('active');
-            toggleBtn.classList.toggle('active');
-            
-        }
-        return; // Para a execução aqui
+    if (nav && nav.classList.contains("active")) {
+        const clickedNavLink = event.target.closest("#nav-menu a");
+        const clickedOutsideNav = !event.target.closest("#nav-menu");
+        if (clickedNavLink || clickedOutsideNav) closeMobileMenu();
+    }
+});
+
+function closeMobileMenu() {
+    const nav = document.getElementById("nav-menu");
+    const toggleBtn = document.getElementById("menu-toggle");
+    if (!nav || !toggleBtn) return;
+    nav.classList.remove("active");
+    toggleBtn.classList.remove("active");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    toggleBtn.setAttribute("aria-label", "Navigationsmenü öffnen");
+}
+
+document.addEventListener("keydown", event => {
+    const serviceModal = document.getElementById("modal-servicos");
+    const privacyModal = document.getElementById("datenschutzModal");
+    const openModal = [serviceModal, privacyModal].find(modal => modal && !modal.hidden);
+
+    if (event.key === "Escape") {
+        if (serviceModal && !serviceModal.hidden) fecharModal();
+        if (privacyModal && !privacyModal.hidden) closeDatenschutz();
+        closeMobileMenu();
+        return;
     }
 
-    
-}); 
+    if (event.key !== "Tab" || !openModal) return;
+    const focusable = [...openModal.querySelectorAll("button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])")];
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+    }
+});
 
 const btn = document.getElementById('loadMoreBtn');
 const hiddenCards = document.querySelectorAll('.hidden-mobile');
@@ -221,6 +222,7 @@ if (btn && hiddenCards.length > 0) {
 
         // 2. Verifica se o primeiro card está ativo para mudar o texto do botão
         const isActive = hiddenCards[0].classList.contains('show-cards');
+        btn.setAttribute('aria-expanded', String(isActive));
         
         // 3. Atualiza o texto e faz o scroll se necessário
         if (isActive) {

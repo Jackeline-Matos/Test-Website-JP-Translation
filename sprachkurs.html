@@ -67,9 +67,9 @@
   </div>
 </section>
 
-<div id="modal-servicos" class="modal">
+<div id="modal-servicos" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
   <div class="modal-content" id="card-grande">
-    <span class="close-button" onclick="fecharModal()">&times;</span>
+    <button type="button" class="close-button" onclick="fecharModal()" aria-label="Dialog schließen">&times;</button>
     <h3 id="modal-titulo"></h3>
     <div id="modal-texto"></div>
   </div>
@@ -84,4 +84,4 @@
   <script src="js/script.js" defer></script>
 
 </body>
-
+</html>

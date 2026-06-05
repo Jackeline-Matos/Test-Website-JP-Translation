@@ -31,7 +31,7 @@
 
 }
 
-#infos-about,  p{
+.infos-about p {
 
  line-height: 1.2;
 }
@@ -43,3 +43,26 @@
     font-size: 0.95rem;  
   }
 
+
+@media (max-width: 768px) {
+  .hero-about {
+    flex-direction: column;
+  }
+
+  .infos-about {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 22.93rem;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    height: auto;
+    margin-left: 0;
+  }
+}

@@ -46,7 +46,8 @@
 .contact-form select:focus, 
 .contact-form textarea:focus {
   border-color: #fdc509 !important;
-  outline: none;
+  outline: 0.1875rem solid #222;
+  outline-offset: 0.1875rem;
 }
 
 /* Kontakt-Button Styling */
@@ -112,4 +113,48 @@
   height: 3.5rem;
 
 }
-/* 
+
+.kontact-info a {
+  color: inherit;
+}
+
+@media (max-width: 1024px) {
+  .btn-contact {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-contact {
+    margin: 2rem 1rem;
+  }
+
+  .contact-intro h1 {
+    font-size: 2rem;
+  }
+
+  .btn-contact {
+    width: 100%;
+  }
+
+  .kontact-info {
+    padding: 1.25rem;
+  }
+
+  .kontact-info p {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .social-wrapper-contact {
+    margin-left: 0;
+  }
+}
+
+.form-privacy-note {
+  color: #555;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
