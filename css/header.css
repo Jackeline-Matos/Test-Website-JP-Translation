@@ -72,7 +72,8 @@
 #service-page .link-service::after,
 #contact-page .link-contact::after, 
 #sprachkurs-page .link-sprachkurs::after,
-#about-page .link-about::after {
+#about-page .link-about::after,
+#cooperation-page .link-cooperation::after {
   width: 100%;
   display: block;
 }
@@ -82,7 +83,8 @@
 #service-page .link-service,
 #sprachkurs-page .link-sprachkurs,
 #about-page .link-about,
-#contact-page .link-contact {
+#contact-page .link-contact,
+#cooperation-page .link-cooperation {
   color: #000;
 }
 

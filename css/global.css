@@ -466,28 +466,6 @@ border-radius: 0.5rem; /* 10px */
       margin-right: 2rem;
     }
 
-
-    /* UBER UNS */
-
-    .text-s {
-
-        display: flex;
-        align-items: center;
-
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .text-mobile {
-        display: flex;
-        flex-direction: column;
-        text-align:left;
-    }
-
-    #modal-mobile {
-      display: block; /* Exibe o link de Datenschutz no mobile */
-      width: 50%;
-    }
 }
 
 

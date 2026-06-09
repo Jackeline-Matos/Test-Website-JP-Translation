@@ -46,10 +46,24 @@ function hideDialog(modal) {
 const container = document.querySelector('.cards-grid'); // coloque a classe do seu container aqui
 const relocationCard = document.getElementById('card-relocation');
 
-if (container && relocationCard) {
-    // Move o card para a última posição dentro do container
-    container.appendChild(relocationCard);
+function showDialog(modal) {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.hidden = false;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+    const focusTarget = modal.querySelector(".close-button, button, a, input, select, textarea");
+    if (focusTarget) focusTarget.focus();
 }
+
+function hideDialog(modal) {
+    if (!modal) return;
+    modal.hidden = true;
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+    if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
+}
+
 /* Service - Dienstleistung */
 
 function abrirModal(titulo, texto) {
@@ -128,7 +142,7 @@ const cursoSecurityEnglish = {
   
       <h4>Umfang, Termine, Location, Kursgebühren</h4>
       <ul>
-        <li><strong>Umfang:</strong> Module von 15-20 Terminen @ 90 min. (ou nach Absprache)</li>
+        <li><strong>Umfang:</strong> Module von 15-20 Terminen @ 90 min. (oder nach Absprache)</li>
         <li><strong>Teilnehmerzahl:</strong> max. 4 Personen</li>
         <li><strong>Ort:</strong> In den Räumen Ihres Unternehmens</li>
         <li><strong>Gebühren:</strong> Je nach Teilnehmerzahl</li>
