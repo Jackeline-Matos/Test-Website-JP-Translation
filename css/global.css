@@ -61,7 +61,8 @@ border-radius: 0.5rem; /* 10px */
   position: relative;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
   border: 0.0625rem solid rgba(255, 255, 255, 0.3);
-  box-sizing: content-box;
+  box-sizing: border-box;
+  width: calc(100% - 2rem);
   
 }
 
@@ -329,9 +330,6 @@ border-radius: 0.5rem; /* 10px */
     .infos {
         display: grid;
         grid-template-columns: 1fr;
-        display: contents;
-        background-color: blue;
-  
     }
 
   .infos p {
@@ -393,12 +391,12 @@ border-radius: 0.5rem; /* 10px */
     }
 
     /* Logik für "Mehr anzeigen" */
-    .hidden-mobile {
-        display: none; /* Karten am Handy verstecken */
+    #home-page .hidden-mobile {
+        display: none; /* Zusätzliche Karten nur auf der Startseite verstecken */
     }
 
     /* Diese Klasse wird per JavaScript hinzugefügt */
-    .show-cards {
+    #home-page .show-cards {
       display: flex !important;
       animation: fadeIn 0.5s ease-in-out;
     }
@@ -456,11 +454,11 @@ border-radius: 0.5rem; /* 10px */
         padding: 1.2rem;
     }
 
-    #card-grande {
-        max-width:20rem;
+    #card-grande,
+    #datenschutz-card {
+        max-width: 20rem;
         max-height: 60vh;
         margin: 5rem auto;
-       
     }
 
     .card-service img {
@@ -468,28 +466,6 @@ border-radius: 0.5rem; /* 10px */
       margin-right: 2rem;
     }
 
-
-    /* UBER UNS */
-
-    .text-s {
-
-        font-display: flex;
-        align-items: center;
-
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .text-mobile {
-        display: flex;
-        flex-direction: column;
-        text-align:left;
-    }
-
-    #modal-mobile {
-      display: block; /* Exibe o link de Datenschutz no mobile */
-      width: 50%;
-    }
 }
 
 
@@ -559,91 +535,87 @@ border-radius: 0.5rem; /* 10px */
   }
 }
 
-/*
-============================================================
-   HANDY-ANPASSUNGEN 
-   SERVICE
-   ============================================================ */
+/* Sichtbare Tastatur-Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 0.1875rem solid #222;
+  outline-offset: 0.1875rem;
+}
 
-   @media (max-width: 1024px) {
-      .btn-contact {
-      width: 50%;
-    }
+.close-button {
+  border: 0;
+  background: transparent;
+  color: #222;
+  cursor: pointer;
+  float: right;
+  font-size: 2rem;
+  line-height: 1;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
 
-   }
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
 
-   @media (max-width: 768px) {
-    .main-contact {
-      margin: 2rem 1.25rem; /* 32px */
-    }
+/* Kooperationen */
+.cooperation-page-content {
+  margin-bottom: 4rem;
+}
 
-    .contact-intro h1 {
-      font-size: 1.8rem;
-    }
+.cooperation-logo img {
+  object-fit: contain;
+  background: #fff;
+}
 
-    .btn-contact {
-      width: 50%;
-    }
+.cooperation-section {
+  margin: 1rem 1.25rem 4rem;
+}
 
-    .kontact-info {
-      max-width: 100%;
-      padding: 1.25rem; /* 20px */
-    }
+.cooperation-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
 
-   }
-/* MEDIA QUERIES - CONTACT SOCIAL-MEDIA-BUTTONS */
-/* Para telas com menos de 768px (Tablets e Celulares) */
+.cooperation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.cooperation-card {
+  background: #fff;
+  border-left: 0.25rem solid #fdc509;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+}
+
+.cooperation-card h3 {
+  margin-top: 0;
+}
+
+.cooperation-note {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
-  .social-wrapper-contact {
-    margin-left: 15rem; 
-    display: flex;
-    justify-content: center; 
-    gap: 1rem; /
+  .cooperation-grid {
+    grid-template-columns: 1fr;
   }
 
-  .social-wrapper-contact img {
-    width: 2.5rem; 
-    height: 2.5rem;
-  }
-}
-
-
-/* About uns */
-
-
-  @media (max-width: 768px) {
-  .hero-about {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-image {
- 
-    margin-bottom: 2rem;
-    margin-right:0;
-  }
-
-    .about-image img {
-        width: 80%;
-        height: 80%;
-  }
-
-  .infos-about {
-    width: 100%;
-    padding-right: 0;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-image {
-  
-  width: 19rem; 
-  height: 25rem; 
-  }
-
-  .p-about {
-    font-size: 0.95rem;
-    text-align: justify;
+  .cooperation-section {
+    margin-inline: 0;
   }
 }

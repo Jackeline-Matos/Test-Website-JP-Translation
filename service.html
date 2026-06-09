@@ -8,14 +8,13 @@
   <meta name="description" content="Ihr zuverlässiger Partner für professionelle Übersetzungsdienstleistungen und Coaching.">
   <meta name="keywords" content="professionelle Übersetzung, Übersetzer Deutsch-Portugiesisch, Sprachcoaching, interkulturelle Kommunikation, JP Translations">
 
-  <meta property="og:title" content="JP Translations | Tradução e Coaching">
+  <meta property="og:title" content="JP Translations | Dienstleistungen">
   <meta property="og:description" content="Ihr zuverlässiger Partner für professionelle Übersetzungsdienstleistungen und Coaching.">
   <title>JP Translations | Dienstleistungen </title>
   <link rel="icon" type="image/x-icon" href="css/foto/Schmetterling.svg">
 
-  <link rel="canonical" href="https://seusite.com">
+  <link rel="canonical" href="https://test-website-jp-translation.vercel.app/service.html">
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/foto/Butterfly.svg">
 
 </head>
 <body id="service-page">
@@ -29,7 +28,7 @@
           <h1>Unsere Dienstleistungen im Überblick</h1>
           <p>Freie Mitarbeit - Outsourcing Partner - Inhouse Solutions</p>
           <p class="sub-text">Professionell | Qualifiziert | Zuverlässig | Schnell</p>
-          <a href="#contact" class="btn-primary">Jetzt anfragen</a>
+          <a href="contact.html" class="btn-primary">Jetzt anfragen</a>
         </div>
         <div class="logo-image">
           <img src="css/foto/Dienstleistung.svg" alt="JP Translations">
@@ -38,15 +37,15 @@
     </section>
   </div>
 
-  <div id="modal-servicos" class="modal">
-    <div class="modal-content card-grande"> <span class="close-button" onclick="fecharModal()">&times;</span>
+  <div id="modal-servicos" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal-content card-grande"> <button type="button" class="close-button" onclick="fecharModal()" aria-label="Dialog schließen">&times;</button>
       <h3 id="modal-titulo"></h3>
       <div id="modal-texto"></div>
     </div>
   </div>
 
   <div class="modal-service-container">
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Company Development & Technical Services', 
       '<ul>' +
         '<li>Beeidigte Übersetzungen nach DIN-Norm</li>' +
@@ -65,9 +64,9 @@
       
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Training - Coaching - Consulting', 
       '<ul>' +
         '<li>Interkulturelle Trainings</li>' +
@@ -90,12 +89,12 @@
       
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Übersetzen - Dolmetschen - Dokumentation', 
       '<ul>' +
-        '<li>English</li><li>Italienisch</li><li>Französisch</li><li>Spanisch</li>' +
+        '<li>Englisch</li><li>Italienisch</li><li>Französisch</li><li>Spanisch</li>' +
         '<li>Portugiesisch</li><li>Niederländisch</li><li>Polnisch</li><li>Russisch</li>' +
         '<li>Rumänisch</li><li>Tschechisch</li><li>Serbisch</li><li>Kroatisch</li>' +
         '<li>Norwegisch</li><li>Dänisch</li><li>Schwedisch</li><li>Arabisch</li>' +
@@ -106,9 +105,9 @@
       Übersetzen | Dolmetschen | Dokumentation
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
 
-    <div class="card card-service" onclick="abrirModal(
+    <button type="button" class="card card-service" onclick="abrirModal(
       'Unsere Arbeitsweise & Philosophie', 
       '<ul>' +
         '<li>Flexibel</li>' +
@@ -123,7 +122,7 @@
       Unsere Arbeitsweise & Philosophie
       <img src="css/foto/Schmetterling.svg" alt="">
       <div>+</div>
-    </div>
+    </button>
   </div>
   <div id="calltoaction-placeholder"></div>
   <div id="footer-placeholder"></div>

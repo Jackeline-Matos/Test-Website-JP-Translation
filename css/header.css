@@ -72,7 +72,8 @@
 #service-page .link-service::after,
 #contact-page .link-contact::after, 
 #sprachkurs-page .link-sprachkurs::after,
-#about-page .link-about::after {
+#about-page .link-about::after,
+#cooperation-page .link-cooperation::after {
   width: 100%;
   display: block;
 }
@@ -82,7 +83,8 @@
 #service-page .link-service,
 #sprachkurs-page .link-sprachkurs,
 #about-page .link-about,
-#contact-page .link-contact {
+#contact-page .link-contact,
+#cooperation-page .link-cooperation {
   color: #000;
 }
 
@@ -166,7 +168,7 @@
     .nav-menu a {
         font-size: 1.2rem;
         display: block;
-       
+        padding: 0.75rem 1.5rem;
     }
 
     /* Esconde o efeito de linha para não poluir o mobile */
@@ -179,12 +181,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
+        width: 44px;
+        height: 44px;
+        padding: 11px 7px;
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 0;
         z-index: 1001;
     }
 
