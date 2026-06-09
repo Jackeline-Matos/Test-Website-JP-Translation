@@ -16,13 +16,7 @@
 
 }
 
-/* Zweispaltiges Kontaktlayout */
-.contact-flex {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 28.125rem);
-  gap: 3rem;
-  align-items: start;
-}
+
 
 /* Anpassungen am Kontaktformular */
 .contact-form {
