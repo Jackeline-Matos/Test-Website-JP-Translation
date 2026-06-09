@@ -51,10 +51,6 @@
 
 
 button.card-service {
-  appearance: none;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 0;
   cursor: pointer;
   font: inherit;
   text-align: left;

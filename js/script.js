@@ -42,6 +42,28 @@ function hideDialog(modal) {
     if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
 }
 
+// Seleciona o container pai e o card pelo ID único
+const container = document.querySelector('.cards-grid'); // coloque a classe do seu container aqui
+const relocationCard = document.getElementById('card-relocation');
+
+function showDialog(modal) {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.hidden = false;
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+    const focusTarget = modal.querySelector(".close-button, button, a, input, select, textarea");
+    if (focusTarget) focusTarget.focus();
+}
+
+function hideDialog(modal) {
+    if (!modal) return;
+    modal.hidden = true;
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+    if (lastFocusedElement && document.contains(lastFocusedElement)) lastFocusedElement.focus();
+}
+
 /* Service - Dienstleistung */
 
 function abrirModal(titulo, texto) {
